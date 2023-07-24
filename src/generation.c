@@ -78,14 +78,3 @@ void break_wall(Maze* maze, Cell cell, Wall wall) {
         union_set(&(maze->uf), a, b);
     }
 }
-
-void build_maze(Maze* maze, int cell_size) {
-    while (find(&(maze->uf), 0) != find(&(maze->uf), maze->cell_heigth * maze->cell_width - 1)) {
-        Cell cell = random_cell(maze);
-        Wall wall = random_wall();
-        break_wall(maze, cell, wall);
-        remove_wall(cell.x, cell.y, cell_size, wall);
-        MLV_update_window();
-        MLV_wait_milliseconds(10);
-    }
-}

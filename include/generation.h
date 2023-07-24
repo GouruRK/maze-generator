@@ -34,6 +34,4 @@ Cell select_neighbour_cell(Cell cell, Wall wall);
 
 void break_wall(Maze* maze, Cell cell, Wall wall);
 
-void build_maze(Maze* maze, int cell_size);
-
 #endif

@@ -12,6 +12,11 @@
 //     } 
 // }
 
+void exit_function(void* data) {
+    int* arret = (int*)data;
+    *arret = 1;
+}
+
 void display_default_grid(int cell_width, int cell_height, int cell_size) {
     for (int i = 1; i < cell_width; i++) {
         MLV_draw_line(i * cell_size, 0, i * cell_size, cell_height * cell_size, MLV_COLOR_RED);
